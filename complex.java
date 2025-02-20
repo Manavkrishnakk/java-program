@@ -11,8 +11,19 @@ class Complex
 	{
 		int x, y;
 		x=c1.r+c2.r;
-		y=c2.i+c2.i;
-		System.out.println("Sum="+x+"+"+y+"i");
+		y=c1.i+c2.i;
+		if(x<0&&y<0)
+		{
+			System.out.println("Sum of complex number="+x+y+"i");
+		}
+		else if(x>0&&y<0)
+		{
+			System.out.println("Sum of complex number="+x+y+"i");
+		}
+		else
+		{
+			System.out.println("Sum of complex number="+x+"+"+y+"i");
+		}
 	}
 }
 class complex
