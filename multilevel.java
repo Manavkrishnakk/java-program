@@ -1,3 +1,4 @@
+import java.util.*;
 class Person
 {
 	int age;
@@ -23,12 +24,8 @@ class Employee extends Person
 		this.qual=qual;
 		this.salary=salary;
 	}
-	void display1()
-	{
-	
-	}
 }
-class Teacher extends Person
+class Teacher extends Employee
 {
 	int t_id;
 	String sub,dept;
@@ -39,7 +36,7 @@ class Teacher extends Person
 		this.sub=sub;
 		this.dept=dept;
 	}
-	void display2()
+	void display()
 	{
 		System.out.println("Person name="+name);
 		System.out.println("Person age="+age);
@@ -64,7 +61,7 @@ class multilevel
 		Scanner s1=new Scanner(System.in);
 		Scanner s2=new Scanner(System.in);
 		System.out.println("\nEnter the number of teachers:");
-		n=s1.nextInt();
+		n=s2.nextInt();
 		Teacher[] t=new Teacher[n];
 		for(int i=0;i<n;i++)
 		{
@@ -76,22 +73,26 @@ class multilevel
 			a=s2.nextInt();
 			System.out.print("Enter the  Person address:");
 			add=s1.nextLine();
-			System.out.print("Enter the  Employee id");
+			System.out.print("Enter the  Employee id:");
 			e_id=s2.nextInt();
-			System.out.print("Enter the company name");
+			System.out.print("Enter the company name:");
 			cname=s1.nextLine();
 			System.out.print("Enter the  qualification:");
 			q=s1.nextLine();
 			System.out.print("Enter the  salary:");
-			s=s2.nexFloat();
-			System.out.print("Enter the  teacher id");
+			s=s2.nextFloat();
+			System.out.print("Enter the  teacher id:");
 			t_id=s2.nextInt();
-			System.out.print("Enter the department");
+			System.out.print("Enter the department:");
 			dep=s1.nextLine();
-			System.out.print("Enter the subject");
+			System.out.print("Enter the subject:");
 			sub=s1.nextLine();
-			t[i]=new Teacher(na,gen,a,add,e_id,cname,q,s,t_id,dep,sub);
+			t[i]=new Teacher(na,gen,a,add,e_id,cname,q,s,t_id,sub,dep);
 		}
-		
+		System.out.println("\ndetails are...\n");
+		for(int i=0;i<n;i++)
+		{
+			t[i].display();
+		}
 	}
 }
